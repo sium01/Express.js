@@ -2,7 +2,9 @@ var express=require("express");
 app=express();
 
 
-
+app.get("/",function(req,res){
+res.end("Hello world!")
+});
 
 app.post("/two",function(req,res){
  res.send("hyyy")
@@ -11,7 +13,7 @@ app.put("/three",function(req,res){
  res.send("byyyy!")
 });
 
-app.get("/",function(req,res){
+app.get("/json",function(req,res){
 
 let myJson=[
  {
@@ -44,6 +46,6 @@ status:"single"
  res.json(myJson);
 });
 
-app.listen(2040,function(){
+app.listen(4040,function(){
  console.log("Server run on 1040 Port!")
 });

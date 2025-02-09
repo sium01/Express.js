@@ -1,9 +1,10 @@
+//Simple String Response
 var express=require("express");
 app=express();
 
 
 app.post("/one",function(req,res){
- res.send("Hello This is String!")
+ res.send("Hello This is Simple String Response!")
 });
 
 
@@ -11,7 +12,7 @@ app.get("/two",function(req,res){
  res.send("This is String no.2!")
 });
 
-
+//simple Response Status-Code
 app.delete("/three",function(req,res){
  res.status(404).end("Error")
 });
