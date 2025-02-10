@@ -1,12 +1,13 @@
-let express=require("express");
-let bodyParser=require("body-parser");
-let app=express();
+const express=require("express");
+const bodyParser=require("body-parser");
+const app=express();
 app.use(bodyParser.json());
 app.post('/',(req,res)=>{
-let siam=req.body;
-let fju=JSON.stringify(siam);
-res.send(fju);
+ let siam=req.body;
+ let su=JSON.stringify(siam);
+ res.end(su);
+
 });
-app.listen(3013,()=>{
- console.log("Hello Raw Version!I love you so much")
+app.listen(1010,()=>{
+ console.log("Completed!")
 });

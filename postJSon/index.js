@@ -8,8 +8,8 @@ app.post("/",(req,res)=>{
  let city=siam.city;
  let pl=siam.pl;
  let prof=siam.prof;
- res.send(name+" "+" "+prof+" "+city+" "+pl);
+ res.send(name+" "+prof+" "+city+" "+pl);
 } );
 app.listen(1010,()=>{
  console.log("Complete your TestCase!")
-}) 
+}) ;
