@@ -1,11 +1,29 @@
 var express=require("express");
 var multer=require("multer");
 var app=express();
-var multer=multer();
-app.use(multer.array());
-app.use(express.static('public'));
-app.post('/',(req,res)=>{
-let data=req.body;
-res.send(JSON.stringify(data));
+
+
+
+
+
+var storage=multer.diskStorage({
+ destination:function(req,file,callBack){
+  callBack(null,'./uploads');
+ },
+ filename:function(req,file,callBack){
+  callBack(null,file.originalname)
+ }
 });
-app.listen(2587);
+var upload=multer({storage:storage}).single('myfile')
+app.post('/',function(req,res){
+upload(req,res,function(error){
+ if(error){
+res.send("failed")
+ }else{
+res.send("Success!")
+ }
+});
+});
+app.listen(2533,()=>{
+ console.log("D0ne!")
+});
